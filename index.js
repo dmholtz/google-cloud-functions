@@ -1,4 +1,9 @@
 handle_json = function (json) {
+    let sum = 0;
+    for (val of json) {
+        sum += val;
+    }
+    json["sum"] = sum;
     return json;
 }
 
