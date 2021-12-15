@@ -3,8 +3,9 @@ handle_json = function (json) {
     for (val of json) {
         sum += val;
     }
-    json["sum"] = sum;
-    return json;
+    let result = { "args": json }
+    result["sum"] = sum;
+    return result;
 }
 
 exports.calc = function (req, res) {
@@ -20,5 +21,6 @@ exports.calc = function (req, res) {
             res.status(300).send("Cannot handle request");
             break;
     }
-
 };
+
+// console.log(handle_json([1, 2, 3, 4, 5]));
